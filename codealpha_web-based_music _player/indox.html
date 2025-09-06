@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Player | Your Music Companion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-music"></i>
+                <span>Harmony Player</span>
+            </div>
+            <button class="theme-toggle" id="themeToggle"></button>
+        </header>
+
+        <div class="main-content">
+            <div class="player-section">
+                <div class="now-playing">
+                    <div class="album-art">
+                        <img id="albumArt" src="./image-and-music/play-music.png" alt="Album Art">
+                    </div>
+                    <div class="track-info">
+                        <h2 class="track-title" id="trackTitle">Blinding Lights</h2>
+                        <p class="track-artist" id="trackArtist">The Weeknd</p>
+                    </div>
+                </div>
+
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <div class="time-display">
+                    <span id="currentTime">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+
+                <div class="controls">
+                    <button class="control-btn" id="prevBtn">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button class="control-btn play-pause" id="playPauseBtn">
+                        <i class="fas fa-play" id="playIcon"></i>
+                    </button>
+                    <button class="control-btn" id="nextBtn">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                </div>
+
+                <div class="volume-control">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+                </div>
+            </div>
+
+            <div class="playlist-section">
+                <h2 class="section-title">
+                    <i class="fas fa-list"></i>
+                    Playlist
+                </h2>
+
+                <div class="search-box">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search songs...">
+                    <button class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <div class="category-filter">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="pop">Pop</button>
+                    <button class="category-btn" data-category="rock">Rock</button>
+                    <button class="category-btn" data-category="jazz">Jazz</button>
+                    <button class="category-btn" data-category="electronic">Electronic</button>
+                </div>
+
+                <div class="playlist" id="playlist">
+                    <!-- Playlist items will be generated here -->
+                </div>
+
+                <div class="upload-section">
+                    <button class="upload-btn" id="uploadBtn">
+                        <i class="fas fa-upload"></i> Upload Music
+                    </button>
+                    <input type="file" id="fileInput" accept="audio/*" style="display: none;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Script.js"></script>
+</body>
+</html>
